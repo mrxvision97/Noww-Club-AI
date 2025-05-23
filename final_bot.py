@@ -656,6 +656,41 @@ st.set_page_config(
 # CSS
 st.markdown("""
 <style>
+body, .main-header, .chat-message, .input-container {
+    background: #181a20 !important;
+    color: #fff !important;
+}
+
+.chat-message.user {
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    color: #222 !important;
+}
+
+.chat-message.assistant, .chat-message.proactive {
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    color: #222 !important;
+}
+
+.main-header h1, .main-header p, .capability {
+    color: #fff !important;
+}
+
+input, textarea, .stTextInput input {
+    background: #222 !important;
+    color: #fff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    body, .main-header, .chat-message, .input-container {
+        background: #181a20 !important;
+        color: #fff !important;
+    }
+    .chat-message.user, .chat-message.assistant, .chat-message.proactive {
+        color: #fff !important;
+    }
+}
+
+/* Existing styles below (keep for layout, animation, etc.) */
 .main-header {
     text-align: center;
     padding: 2rem 0;
@@ -698,19 +733,16 @@ st.markdown("""
 }
 
 .chat-message.user {
-    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
     border-left: 4px solid #2196F3;
     margin-left: 2rem;
 }
 
 .chat-message.assistant {
-    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
     border-left: 4px solid #6C757D;
     margin-right: 2rem;
 }
 
 .chat-message.proactive {
-    background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
     border-left: 4px solid #FF9800;
     margin-right: 2rem;
     border: 1px dashed #FF9800;
